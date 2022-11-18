@@ -8,7 +8,7 @@ module.exports = {
             res.redirect("/");
         });
     },
-    updateTicket: (req, res) => {
+    closeTicket: (req, res) => {
         const id = req.params.id;
         TicketList.findByIdAndUpdate(
             id,
@@ -19,5 +19,22 @@ module.exports = {
                 if (err) return res.status(500).send(err);
                 res.redirect("/");
             });
-    }
+    },
+    editTicket: async (req, res) => {
+        try {
+            let ticketToUpdate = await TicketList.findById(req.params.id).lean()
+            console.log(ticketToUpdate)
+
+            if (!ticket) {
+                return res.render(index.ejs)
+            } else {
+                ticketToUpdate = await TicketList.findOneAndUpdate({_id: req.params.id},
+                    req.body, {
+                        new: true,
+                        runValidators: true,
+                    })
+            } res.redirect('/')
+        } catch (err) {
+        console.log(err);
+    }}
 }

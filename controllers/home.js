@@ -13,6 +13,16 @@ module.exports = {
         }
     },
 
+    getUpdate : async (req, res) => {
+        try {
+            const ticketUpdate = await
+            TicketList.find()
+            res.render("update.ejs");
+        } catch (err) {
+            if (err) return res.status(500).send(err);
+        }
+    },
+
     //Creating an object (ticket) on the DB when someone submits a form
     createTicket: async (req, res) => {
         const newTicket = new TicketList(

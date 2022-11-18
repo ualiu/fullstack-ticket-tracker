@@ -6,6 +6,7 @@ const editController = require('../controllers/edit')
 
 // router.get('/:id', editController.getEdit)
 router.get('/remove/:id', editController.deleteTicket)
-router.get('/:id', editController.updateTicket)
+router.get('/:id', editController.closeTicket)
+router.put("/editTicket/:id", editController.editTicket)
 
 module.exports = router

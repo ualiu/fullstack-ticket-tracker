@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +11,13 @@
 <body>
     <section class="container">
         
-        <h1>FULLSTACK Ticket Tracker</h1>
+        <h1>Form to update ticket</h1>
         
         <section class="jumbotron">
-            <h3>Add New Issue:</h3>
+            <h3>Update Ticket Here:</h3>
+
             <form id="issueInputForm" method="POST" action="/new">
+
                 <div class="form-group">
                     <label for="subject">Subject</label>
                     <input type="text" class="form-control" id="subject" name="subject" placeholder="Issue Subject...">
@@ -35,31 +38,8 @@
                     <label for="assignedTo">Assigned To</label>
                     <input type="text" class="form-control" id="assignedTo" name="assignedTo" placeholder="Enter Person Responsible...">
                 </div>
-                <button type="submit" class="btn btn-warning">Add</button>
+                <button type="submit" class="btn btn-warning" value="Upload">Update</button>
+                <a href="/" class="btn btn-primary">Back</a>
             </form>
         </section>
-
-   <!--THis is where we're pulling the posts to display them on page-->
-
-        <section class="row">
-            <div class="col-lg-12">
-                <div id="issuesList">
-                    <!--This where JS was populated from local storage-->
-                    <% ticketList.forEach(tickets => { %>
-                        <div class="well">
-                            <h6>Issue ID: <%=tickets._id%></h6>
-                            <p><span class="label <%=tickets.status== 'Closed' ? 'label-success' : 'label-info'%>"><%=tickets.status%></span></p>
-                            <h3><%=tickets.subject%></h3>
-                            <p><%=tickets.description%></p>
-                            <p><span class="glyphicon glyphicon-time"></span><%=tickets.severity%><span class="glyphicon glyphicon-user"></span><%=tickets.assignedTo%></p>
-                            <a href="/edit/<%=tickets._id%>" class="btn btn-warning">Close</a>
-                            <a href="/edit/remove/<%=tickets._id%>" class="btn btn-danger">Delete</a>
-                            <a href="/update" class="btn btn-primary">Update</a>
-                        </div>
-                    <% }) %>
-                </div>
-            </div>
-        </section>
-
-    </section>
 </body>
