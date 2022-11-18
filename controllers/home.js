@@ -27,7 +27,7 @@ module.exports = {
     // Saving the ticket in the DB and reloading the page        
         try {
             await newTicket.save();
-            console.log(newTicketk)
+            console.log(newTicket)
             res.redirect("/"); //we can redirect to a different page if needed
         } catch (err) {
             if (err) return res.status(500).send(err);
