@@ -13,16 +13,44 @@
         <h1>FULLSTACK Ticket Tracker</h1>
         
         <section class="jumbotron">
-            <h3>Add New Issue:</h3>
+            <h3>Add New Ticket:</h3>
             <form id="issueInputForm" method="POST" action="/new">
+
                 <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Issue Subject...">
+                    <label for="customerName">Customers name</label>
+                    <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Enter customers name here">
                 </div>
+
+                <div class="form-group">
+                    <label for="customerPhone">Customers phone</label>
+                    <input type="text" class="form-control" id="customerPhone" name="customerPhone" placeholder="Enter customers phone # here">
+                </div>
+
+                <div class="form-group">
+                    <label for="customerEmail">Customers email</label>
+                    <input type="text" class="form-control" id="customerEmail" name="customerEmail" placeholder="Enter customers email here">
+                </div>
+
+                <div class="form-group">
+                    <label for="itemType">Item type</label>
+                    <select class="form-control" id="itemType" name="itemType">
+                        <option value="Shoes" selected>Shoes</option>
+                        <option value="Boots">Boots</option>
+                        <option value="Sneakers">Sneakers</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="brand">Item brand</label>
+                    <input type="text" class="form-control" id="brand" name="brand" placeholder="Enter item brand here">
+                </div>
+
                 <div class="form-group">
                     <label for="description">Description</label>
                     <input type="text" class="form-control" id="description" name="description" placeholder="Issue Description...">
                 </div>
+
                 <div class="form-group">
                     <label for="severity">Severity</label>
                     <select class="form-control" id="severity" name="severity">
@@ -31,6 +59,12 @@
                         <option value="High" selected>High</option>
                     </select>
                 </div>
+
+                <div class="form-group">
+                    <label for="cost">Cost</label>
+                    <input type="text" class="form-control" id="cost" name="cost" placeholder="Enter cost here">
+                </div>
+
                 <div class="form-group">
                     <label for="assignedTo">Assigned To</label>
                     <input type="text" class="form-control" id="assignedTo" name="assignedTo" placeholder="Enter Person Responsible...">

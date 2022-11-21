@@ -26,10 +26,14 @@ module.exports = {
     //Creating an object (ticket) on the DB when someone submits a form
     createTicket: async (req, res) => {
         const newTicket = new TicketList(
-            {
-                subject: req.body.subject,
+            {   customerName: req.body.customerName,
+                customerPhone: req.body.customerPhone,
+                customerEmail: req.body.customerEmail,
+                itemType: req.body.itemType,
+                brand: req.body.brand,
                 description: req.body.description,
                 severity: req.body.severity,
+                cost: req.body.cost,
                 assignedTo: req.body.assignedTo,
                 status: req.body.status,
             });

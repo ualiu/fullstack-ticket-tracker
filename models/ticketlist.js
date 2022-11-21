@@ -1,6 +1,22 @@
 const mongoose = require('mongoose');
 const ticketListSchema = new mongoose.Schema({
-subject: {
+customerName: {
+        type: String,
+        required: true
+},
+customerPhone: {
+    type: String,
+    required: true
+},
+customerEmail: {
+    type: String,
+    required: true
+},
+itemType: {
+    type: String,
+    default: "Shoes"
+},
+brand: {
     type: String,
     required: true
 },
@@ -9,6 +25,10 @@ description: {
     required: true
 },
 severity: {
+    type: String,
+    required: true
+},
+cost: {
     type: String,
     required: true
 },
